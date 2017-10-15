@@ -27,7 +27,7 @@
 		60044FB21F92D40100465C13 /* RestaurantTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantTableTableViewController.swift; path = ../RestaurantTableTableViewController.swift; sourceTree = "<group>"; };
 		60044FB41F92E3EE00465C13 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		60044FB61F931B4600465C13 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
-		60044FB81F93219B00465C13 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		60044FB81F93219B00465C13 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurant.swift; path = ../Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,6 @@
 		60044F941F92D2E400465C13 = {
 			isa = PBXGroup;
 			children = (
-				60044FB81F93219B00465C13 /* Restaurant.swift */,
 				60044F9F1F92D2E400465C13 /* FoodPin */,
 				60044F9E1F92D2E400465C13 /* Products */,
 			);
@@ -62,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				60044FA01F92D2E400465C13 /* AppDelegate.swift */,
+				60044FB81F93219B00465C13 /* Restaurant.swift */,
 				60044FB21F92D40100465C13 /* RestaurantTableTableViewController.swift */,
 				60044FB61F931B4600465C13 /* RestaurantDetailViewController.swift */,
 				60044FB41F92E3EE00465C13 /* RestaurantTableViewCell.swift */,
