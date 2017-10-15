@@ -33,6 +33,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         navigationController?.hidesBarsOnSwipe = false
         
+        //Used for self sizing cells due to location address being truncated
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

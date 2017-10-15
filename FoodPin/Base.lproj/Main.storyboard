@@ -123,16 +123,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nl-Xc-El2">
-                                                    <rect key="frame" x="28" y="8" width="339" height="20.5"/>
+                                                    <rect key="frame" x="15" y="7" width="352" height="21.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-YS-vmk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="113" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="117.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGq-Iq-4In">
-                                                            <rect key="frame" x="113" y="0.0" width="226" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGq-Iq-4In">
+                                                            <rect key="frame" x="117.5" y="0.0" width="234.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -144,8 +144,10 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="7nl-Xc-El2" firstAttribute="top" secondItem="cEN-jk-F8J" secondAttribute="top" constant="7" id="9pj-23-GGa"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="7nl-Xc-El2" secondAttribute="trailing" id="D3N-D7-rOL"/>
-                                                <constraint firstItem="7nl-Xc-El2" firstAttribute="leading" secondItem="cEN-jk-F8J" secondAttribute="leadingMargin" constant="20" id="cXj-j6-tHz"/>
+                                                <constraint firstItem="7nl-Xc-El2" firstAttribute="leading" secondItem="cEN-jk-F8J" secondAttribute="leadingMargin" constant="7" id="cXj-j6-tHz"/>
+                                                <constraint firstAttribute="bottom" secondItem="7nl-Xc-El2" secondAttribute="bottom" constant="7" id="fkN-Uy-Bfv"/>
                                                 <constraint firstItem="7nl-Xc-El2" firstAttribute="centerY" secondItem="cEN-jk-F8J" secondAttribute="centerY" id="kAB-E4-fw0"/>
                                             </constraints>
                                         </tableViewCellContentView>
