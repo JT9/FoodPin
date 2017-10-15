@@ -82,6 +82,9 @@ class RestaurantTableTableViewController: UITableViewController {
             cell.accessoryType = .none
         }
         
+        /*
+            cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
+         */
 
         return cell
     }
@@ -94,6 +97,7 @@ class RestaurantTableTableViewController: UITableViewController {
         
         //Add actions to the menu
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
         
         //Add Call Action
         let callActionHandler = { (action:UIAlertAction!) -> Void in
@@ -102,78 +106,38 @@ class RestaurantTableTableViewController: UITableViewController {
             self.present(alertMessage, animated: true, completion: nil)
             
         }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
         
+        
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
+        optionMenu.addAction(callAction)
+        
+        
+        //Option to check in and undo your check in
+        let checkInTitle = restaurantIsVisited[indexPath.row] ? "Undo Check In" : "Check In"
+
+            //? "Undo Check In" : "Check In"
         //Check-in action
-        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
+        let checkInAction = UIAlertAction(title: checkInTitle, style: .default, handler: {
             (action:UIAlertAction!) -> Void in
             
             let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
+            //cell?.accessoryType = .checkmark
+            
+            //Toggle check-in and undo-check-in
+            self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
+            cell?.accessoryType = self.restaurantIsVisited[indexPath.row] ? .checkmark : .none
+            
             //Used to keep track of which restaurants were checked due to bug of cell reuse
             self.restaurantIsVisited[indexPath.row] = true
         })
         
-        
-        //Adding options to display
-        optionMenu.addAction(callAction)
         optionMenu.addAction(checkInAction)
-        optionMenu.addAction(cancelAction)
         
+        tableView.deselectRow(at: indexPath, animated: false)
         //Display the menu
         present(optionMenu, animated: true, completion: nil)
         
-        tableView.deselectRow(at: indexPath, animated: false)
-        
         
     }
-    
-    
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
