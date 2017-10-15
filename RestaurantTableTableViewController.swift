@@ -30,6 +30,8 @@ class RestaurantTableTableViewController: UITableViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    //Used to keep track of which restaurants were visted
+    var restaurantIsVisited = Array(repeating: false, count: 21)
     
     
     
@@ -72,6 +74,14 @@ class RestaurantTableTableViewController: UITableViewController {
         cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
+        
+        //Check to see if restaurant is marked and update it
+        if restaurantIsVisited[indexPath.row] {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
 
         return cell
     }
@@ -100,6 +110,8 @@ class RestaurantTableTableViewController: UITableViewController {
             
             let cell = tableView.cellForRow(at: indexPath)
             cell?.accessoryType = .checkmark
+            //Used to keep track of which restaurants were checked due to bug of cell reuse
+            self.restaurantIsVisited[indexPath.row] = true
         })
         
         
@@ -110,6 +122,10 @@ class RestaurantTableTableViewController: UITableViewController {
         
         //Display the menu
         present(optionMenu, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        
     }
     
     
