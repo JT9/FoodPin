@@ -199,7 +199,7 @@ class RestaurantTableViewController: UITableViewController {
         return [deleteAction, shareAction]
     }
     
-    //Used to pass image to another ViewController
+    //Used to pass restaurant array to another ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
