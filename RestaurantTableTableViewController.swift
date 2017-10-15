@@ -144,10 +144,12 @@ class RestaurantTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         //Social sharing button
         let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: { (action, indexPath) -> Void in
-            
             let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
-            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-            self.present(activityController, animated: true, completion: nil)
+            //Display restaurant image when sharing to Twitter/Facebook
+            if let imageToShare = UIImage(named: self.restaurantImages[indexPath.row]) {
+                let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+                self.present(activityController, animated: true, completion: nil)
+            }
         })
         
         //Delete Button
@@ -163,6 +165,10 @@ class RestaurantTableTableViewController: UITableViewController {
             //Another method to reload data in TableView
             tableView.deleteRows(at: [indexPath], with: .fade)
         })
+        
+        //Changes color of shareAction and deleteAction buttons
+        shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         
         return [deleteAction, shareAction]
     }
