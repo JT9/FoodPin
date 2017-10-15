@@ -98,7 +98,7 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="Nvk-dz-xho">
             <objects>
-                <viewController id="lU4-z1-nzO" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lU4-z1-nzO" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9rD-Ct-ddI"/>
                         <viewControllerLayoutGuide type="bottom" id="5AK-Oi-CLY"/>

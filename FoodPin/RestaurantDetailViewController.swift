@@ -22,6 +22,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
         restaurantImageView.image = UIImage(named: restaurant.image)
         
+        //Light grey background
+        tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        //Remove separators of empty rows
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        //Change color of separators
+        tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
+        
+        title = restaurant.name
+        
     }
     
     
@@ -52,6 +61,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        cell.backgroundColor = UIColor.clear
+        
         return cell
     }
     
