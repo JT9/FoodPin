@@ -91,6 +91,7 @@ class RestaurantTableTableViewController: UITableViewController {
     
     
     
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Create an option menu as an action sheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
@@ -139,6 +140,7 @@ class RestaurantTableTableViewController: UITableViewController {
         
         
     }
+    */
     
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -171,6 +173,19 @@ class RestaurantTableTableViewController: UITableViewController {
         deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         
         return [deleteAction, shareAction]
+    }
+    
+    //Used to pass image to another ViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationViewController = segue.destination as! RestaurantDetailViewController
+                destinationViewController.restaurantImage = restaurantImages[indexPath.row]
+                destinationViewController.restaurantName = restaurantNames[indexPath.row]
+                destinationViewController.restaurantType = restaurantTypes[indexPath.row]
+                destinationViewController.restaurantLocation = restaurantLocations[indexPath.row]
+            }
+        }
     }
     
     

@@ -13,6 +13,8 @@
 		60044FAB1F92D2E400465C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60044FA91F92D2E400465C13 /* LaunchScreen.storyboard */; };
 		60044FB31F92D40100465C13 /* RestaurantTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60044FB21F92D40100465C13 /* RestaurantTableTableViewController.swift */; };
 		60044FB51F92E3EE00465C13 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60044FB41F92E3EE00465C13 /* RestaurantTableViewCell.swift */; };
+		60044FB71F931B4600465C13 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60044FB61F931B4600465C13 /* RestaurantDetailViewController.swift */; };
+		60044FB91F93219B00465C13 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60044FB81F93219B00465C13 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		60044FAC1F92D2E400465C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60044FB21F92D40100465C13 /* RestaurantTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantTableTableViewController.swift; path = ../RestaurantTableTableViewController.swift; sourceTree = "<group>"; };
 		60044FB41F92E3EE00465C13 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		60044FB61F931B4600465C13 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		60044FB81F93219B00465C13 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		60044F941F92D2E400465C13 = {
 			isa = PBXGroup;
 			children = (
+				60044FB81F93219B00465C13 /* Restaurant.swift */,
 				60044F9F1F92D2E400465C13 /* FoodPin */,
 				60044F9E1F92D2E400465C13 /* Products */,
 			);
@@ -58,6 +63,7 @@
 			children = (
 				60044FA01F92D2E400465C13 /* AppDelegate.swift */,
 				60044FB21F92D40100465C13 /* RestaurantTableTableViewController.swift */,
+				60044FB61F931B4600465C13 /* RestaurantDetailViewController.swift */,
 				60044FB41F92E3EE00465C13 /* RestaurantTableViewCell.swift */,
 				60044FA41F92D2E400465C13 /* Main.storyboard */,
 				60044FA71F92D2E400465C13 /* Assets.xcassets */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60044FB91F93219B00465C13 /* Restaurant.swift in Sources */,
 				60044FA11F92D2E400465C13 /* AppDelegate.swift in Sources */,
 				60044FB51F92E3EE00465C13 /* RestaurantTableViewCell.swift in Sources */,
+				60044FB71F931B4600465C13 /* RestaurantDetailViewController.swift in Sources */,
 				60044FB31F92D40100465C13 /* RestaurantTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +311,7 @@
 				60044FB11F92D2E400465C13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
